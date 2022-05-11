@@ -1,2 +1,2 @@
-# react_course
-React course
+# React Course
+Aprendendo react
