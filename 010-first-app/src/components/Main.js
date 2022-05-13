@@ -16,7 +16,7 @@ function Main() {
                 <li>Powers thousands of enterprise apps, including mobile apps</li>
             </ul>
 
-            <img src={reactImage} alt="react image" title="react image" className="react-image"/>
+            <img src={reactImage} alt="react logo" title="react image" className="react-image"/>
         </main>
     );
 }
