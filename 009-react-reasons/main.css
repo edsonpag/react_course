@@ -1,0 +1,66 @@
+.navbar {
+    height: 7.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav-items {
+    
+    display: flex;
+    gap: 4rem;
+    margin-right: 6rem;
+
+    list-style: none;
+}
+
+.logo {
+    width: 6rem;
+    margin-left: 3rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 6rem;
+    text-align: center;
+    letter-spacing: 0.5rem;
+    line-height: 5rem;
+}
+
+.main-items {
+    margin-top: 2rem;
+
+    text-align: left;
+    letter-spacing: 0.2rem;
+    line-height: 3.1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+
+    height: 7.2rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    line-height: 3.1rem;
+
+    background-color: rgba(128, 128, 128, 0.2);
+}
