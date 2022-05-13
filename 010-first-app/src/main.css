@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --primary-color: hsla(193, 95%, 68%, 1);
+    --white-text-color: hsla(210, 65%, 92%, 1);
+    --nav-background-color: hsla(233, 12%, 15%, 1);
+    --main-background-color: hsla(217, 14%, 18%, 1);
+}
+
+body {
+    font-size: 1.6rem;
+}

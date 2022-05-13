@@ -1,0 +1,39 @@
+nav {
+    height: 9.1rem;
+    background-color: var(--nav-background-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-a {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    margin-left: 2.6rem;
+}
+
+.col-b {
+    margin-right: 2.6rem;
+}
+
+.logo {
+    width: 2.893rem;
+    height: 2.893rem;
+}
+
+h3 {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 2.2rem;
+    line-height: 2.7rem;
+    letter-spacing: -0.05rem;
+}
+
+p {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: var(--white-text-color);
+}
