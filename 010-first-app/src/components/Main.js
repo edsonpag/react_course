@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Main.css";
+import reactImage from "../images/reactjs-icon.png";
 
 function Main() {
     return(
@@ -14,6 +15,8 @@ function Main() {
                 <li>Is maintained by Facebook</li>
                 <li>Powers thousands of enterprise apps, including mobile apps</li>
             </ul>
+
+            <img src={reactImage} alt="react image" title="react image" className="react-image"/>
         </main>
     );
 }

@@ -30,5 +30,11 @@ h1 {
     font-weight: bold;
     display: inline-block;
     margin-right: 1.3rem;
+}
 
+.react-image {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    z-index: -1;
 }
