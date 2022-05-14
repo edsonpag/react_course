@@ -1,0 +1,38 @@
+.switch-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 8rem;
+    height: 3rem;
+
+    border: none;
+    border-radius: 0.8rem;
+
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.switch-btn span:nth-child(1),
+.switch-btn span:nth-child(2) {
+    margin-inline: 0.6rem;
+}
+
+
+.switch {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: var(--blue-background-color);
+    border-radius: 0.8rem;
+
+    transition: transform 800ms ease;
+}
+
+.on {
+    transform: translateX(100%);
+}

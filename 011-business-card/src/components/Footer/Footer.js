@@ -4,7 +4,7 @@ import "./Footer.css";
 
 function Footer() {
     return (
-        <footer>
+        <footer className="light-mode">
             <ul className="social-links">
                 <li>
                     <i className="bi bi-twitter"></i>

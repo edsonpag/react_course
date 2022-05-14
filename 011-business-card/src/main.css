@@ -17,6 +17,8 @@
     --blue-background-color: hsla(212, 78%, 53%, 1);
     --footer-background-color: hsla(255, 5%, 84%, 1);
     --social-icons-background-color: hsla(254, 6%, 58%, 1);
+    --dark-mode: hsla(231, 12%, 12%, 1);
+    --footer-dark-mode: hsla(231, 7%, 9%, 1);
 }
 
 body {
@@ -33,6 +35,19 @@ body {
     justify-content: center;
     align-items: center;
 
+    position: relative;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.light-mode {
+    background-color: var(--footer-background-color);
+    color: var(--text-color);
+}
+
+
+.dark-mode {
+    background: var(--dark-mode);
+    color: white;
 }
 
 /* SECTIONS DEFAULT STYLE */
@@ -42,12 +57,7 @@ section {
     padding-inline: 3.5rem;
 }
 
-section h4 {
-    color: var(--title-text-color);
-}
-
 section p {
-    color: var(--text-color);
     font-weight: 400;
     font-size: 1.024rem;
     line-height: 150%;
