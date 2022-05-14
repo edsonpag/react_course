@@ -22,9 +22,31 @@ body {
 }
 
 .centralizer {
+    width: min(31.7rem, 100%);
+    margin-inline: auto;
+    padding-inline: 3.5rem;
+
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
+
+}
+
+/* SECTIONS DEFAULT STYLE */
+
+section {
+    margin-top: 2.5rem;
+}
+
+section h4 {
+    color: var(--title-text-color);
+}
+
+section p {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1.024rem;
+    line-height: 150%;
+    margin-top: 0.5rem;
 }
