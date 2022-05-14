@@ -15,6 +15,8 @@
     --gray-border-color: hsla(216, 12%, 84%, 1);
     --box-shadow-color: rgba(0, 0, 0, 0.05);
     --blue-background-color: hsla(212, 78%, 53%, 1);
+    --footer-background-color: hsla(255, 5%, 84%, 1);
+    --social-icons-background-color: hsla(254, 6%, 58%, 1);
 }
 
 body {
@@ -24,7 +26,7 @@ body {
 .centralizer {
     width: min(31.7rem, 100%);
     margin-inline: auto;
-    padding-inline: 3.5rem;
+    background-color: var(--background-color);
 
     display: flex;
     flex-direction: column;
@@ -37,6 +39,7 @@ body {
 
 section {
     margin-top: 2.5rem;
+    padding-inline: 3.5rem;
 }
 
 section h4 {

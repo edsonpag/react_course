@@ -1,0 +1,35 @@
+footer {
+    width: 100%;
+    height: 6.4rem;
+
+    margin-top: 3.1rem;
+    background-color: var(--footer-background-color);
+    border-radius: 0px 0px 0.1rem 0.1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links {
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.social-links li {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    background-color: var(--social-icons-background-color);
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
