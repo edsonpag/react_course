@@ -1,0 +1,75 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    background-color: var(--background-color);
+}
+
+.person-image {
+    width: 31.7rem;
+    height: 31.7rem;
+}
+
+.person-name {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    color: var(--title-text-color);
+}
+
+.person-job {
+    font-weight: 400;
+    font-size: 1.28rem;
+    line-height: 1.5rem;
+    color: var(--orange-text-color);
+}
+
+.person-website {
+    font-size: 1.024rem;
+    line-height: 150%;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.contact-btns {
+    margin-top: 1.7rem;
+
+    display: flex;
+    gap: 1.7rem;
+}
+
+.contact-btns button {
+    width: 11.5rem;
+    height: 3.4rem;
+    padding: 0.9rem 1.3rem 0.9rem 1.1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+
+    outline: none;
+    border-radius: 0.6rem;
+    box-shadow: 0px 0.1rem 0.2rem var(box-shadow-color);
+    
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+
+.contact-btns button:nth-child(1) {
+    background-color: white;
+    border: 0.1rem solid var(--gray-border-color);
+}
+
+.contact-btns button:nth-child(2) {
+    color: white;
+    background-color: var(--blue-background-color);
+    border: none;
+}

@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --title-text-color: hsla(250, 18%, 19%, 1);
+    --background-color: hsla(0, 0%, 96%, 1);
+    --orange-text-color: hsla(25, 90%, 55%, 1);
+    --text-color: hsla(234, 22%, 37%, 1);
+    --gray-border-color: hsla(216, 12%, 84%, 1);
+    --box-shadow-color: rgba(0, 0, 0, 0.05);
+    --blue-background-color: hsla(212, 78%, 53%, 1);
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.centralizer {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
