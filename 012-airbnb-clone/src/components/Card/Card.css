@@ -1,0 +1,80 @@
+.card {
+    margin-top: 4.9rem;
+}
+
+.card-image-container {
+    position: relative;
+}
+
+.card-status {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+
+    font-weight: 600;
+    font-size: 1.024rem;
+    line-height: 110%;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--text-color);
+
+    border-radius: 0.2rem;
+
+    width: 6.1rem;
+    height: 2rem;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image {
+    width: 17.6rem;
+    height: 23.5rem;
+}
+
+.card-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.card-description > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.line-1 {
+    gap: 0.2rem;
+}
+
+.card-star {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.card-grade,
+.card-reviews,
+.card-country,
+.card-text,
+.card-price {
+    font-size: 1.2rem;
+    line-height: 110%;
+    color: var(--text-color);
+}
+
+.card-reviews,
+.card-country {
+    color: var(--gray-text-color);
+}
+
+.card-country::before {
+    content: "\2022";
+    display: inline-block;
+    color: var(--gray-text-color);
+    height: 0.2rem;
+    margin-right: 0.2rem;
+}
+

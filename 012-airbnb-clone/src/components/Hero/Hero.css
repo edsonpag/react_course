@@ -1,0 +1,30 @@
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2.6rem;
+}
+
+.hero-image {
+    width: min(39.5rem, 90%);
+}
+
+.hero-text {
+    margin-top: 3.2rem;
+}
+
+.hero-title {
+    font-size: 3.6rem;
+    line-height: 110%;
+    font-weight: 600;
+}
+
+.hero-paragraph {
+    margin-top: 1.6rem;
+    max-width: 32rem;
+
+    line-height: 110%;
+    font-weight: 300;
+    color: var(--text-color);
+}

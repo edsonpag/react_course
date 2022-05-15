@@ -7,8 +7,17 @@
 
 :root {
     font-size: 62.5%;
+
+    --backgroud-color: hsl(0, 0%, 100%);
+    --text-color: hsla(0, 0%, 13%, 1);
+    --gray-text-color: hsl(254, 6%, 58%);
 }
 
 body {
     font-size: 1.6rem;
+    background-color: var(--backgroud-color);
+}
+
+section {
+    padding-inline: 3.6rem;
 }
