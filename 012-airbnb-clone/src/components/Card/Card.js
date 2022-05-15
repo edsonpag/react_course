@@ -11,12 +11,12 @@ function Card() {
             <div className="card">
                 <div className="card-image-container">
                     <p className="card-status">sold out</p>
-                    <img src={cardImage} className="card-image"/>
+                    <img src={cardImage} alt="Katie Zaferes" className="card-image"/>
                 </div>
 
                 <div className="card-description">
                     <div className="line-1">
-                        <img src={cardStar} className="card-star"/>
+                        <img src={cardStar} alt="star" className="card-star"/>
                         <p className="card-grade">5.0</p>
                         <p className="card-reviews">(6)</p>
                         <p className="card-country">USA</p>
