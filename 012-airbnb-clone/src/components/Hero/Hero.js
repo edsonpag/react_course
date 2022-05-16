@@ -2,13 +2,12 @@ import React from "react";
 
 import "./Hero.css";
 
-import heroImage from "../../images/airbnb-hero.png";
 
 function Hero() {
     return (
         <section className="hero">
             <div className="hero-image-container">
-                <img src={heroImage} alt="Hero" className="hero-image" />
+                <img src="images/airbnb-hero.png" alt="Hero" className="hero-image" />
             </div>
             
 
