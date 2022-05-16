@@ -11,7 +11,17 @@ function App() {
         <>
             <Navbar />
             <Hero />
-            <Card />
+            <Card 
+            status="sold out"
+            cardImage="images/katie-zaferes.png"
+            cardStar = "images/star.png"
+            cardGrade = "5.0"
+            cardReviews = "(6)"
+            cardCountry = "USA"
+            cardText = "Life lessons with Katie Zaferes"
+            cardPrice = "From $138"
+            cardPerson = " / person"
+            />
         </>
         
     );
