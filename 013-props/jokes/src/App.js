@@ -10,6 +10,17 @@ function App() {
             <Joke 
             setup="Whats the best thing about Switzerland?"
             punchline="I dont know, but the flag is a big plus."
+            upvotes = {10}
+            downvotes = {3}
+            isPun = {true}
+            comments = {[
+                {
+                    id: 1,
+                    name: "john",
+                    body: "This is soo fun",
+                    title: "Nice. I love"
+                }
+            ]}
             />
 
             <Joke 
