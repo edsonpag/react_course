@@ -13,14 +13,12 @@ function App() {
             <Hero />
             <Card 
             status="sold out"
-            cardImage="images/katie-zaferes.png"
-            cardStar = "images/star.png"
+            cardImage="katie-zaferes.png"
             cardGrade = "5.0"
-            cardReviews = "(6)"
+            cardReviews = {6}
             cardCountry = "USA"
             cardText = "Life lessons with Katie Zaferes"
-            cardPrice = "From $138"
-            cardPerson = " / person"
+            cardPrice = {138}
             />
         </>
         
