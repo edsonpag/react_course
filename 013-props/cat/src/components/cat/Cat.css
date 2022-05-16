@@ -1,0 +1,31 @@
+.cat-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.cat-card {
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+.cat-card-image {
+    border-radius: 0.8rem;
+}
+
+h3 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+}

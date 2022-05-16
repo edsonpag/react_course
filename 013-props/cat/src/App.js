@@ -1,8 +1,11 @@
 import React from "react";
 
+import Cat from "./components/cat/Cat";
+
 function App() {
+
     return (
-        <h1>Its Working!</h1>
+        <Cat />
     );
 }
 
