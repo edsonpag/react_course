@@ -21,3 +21,10 @@ body {
 section {
     padding-inline: 3.6rem;
 }
+
+.card-container {
+    margin-top: 4.9rem;
+
+    display: flex;
+    gap: 1.8rem;
+}

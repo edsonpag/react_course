@@ -4,10 +4,9 @@ import "./Card.css";
 
 function Card(props) {
     return (
-        <section className="card-container">
             <div className="card">
                 <div className="card-image-container">
-                    <p className="card-status">{props.status}</p>
+                    {props.cardOpenSpots === 0 && <p className="card-status">Sold Out</p>}
                     <img src={`images/${props.cardImage}`} alt="Katie Zaferes" className="card-image"/>
                 </div>
 
@@ -30,7 +29,6 @@ function Card(props) {
                     </div>
                 </div> 
             </div>
-        </section>
     );
 }
 

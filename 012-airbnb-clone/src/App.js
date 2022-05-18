@@ -6,20 +6,31 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Card from "./components/Card/Card";
 
+import data from "./data";
+
 function App() {
+
+    const cardsElements = data.map((card) => {
+        return <Card
+        status={card.status}
+        cardImage={card.coverImg}
+        cardGrade={card.stats.rating}
+        cardReviews={card.stats.reviewCount}
+        cardCountry={card.location}
+        cardText={card.title}
+        cardPrice={card.price}
+        cardOpenSpots={card.openSpots}
+        />
+    })
+
     return (
         <>
             <Navbar />
             <Hero />
-            <Card 
-            status="sold out"
-            cardImage="katie-zaferes.png"
-            cardGrade = "5.0"
-            cardReviews = {6}
-            cardCountry = "USA"
-            cardText = "Life lessons with Katie Zaferes"
-            cardPrice = {138}
-            />
+            <section className="card-container">
+                {cardsElements}
+            </section>
+
         </>
         
     );
