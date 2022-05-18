@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+    --linear-gradient-color: hsla(284, 58%, 32%, 1);
+    --linear-gradient-color2: hsla(284, 69%, 49%, 1);
+}
+
+body {
+    font-size: 1.6rem;
+}
