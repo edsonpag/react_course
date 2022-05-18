@@ -2,12 +2,12 @@ import React from "react";
 
 import "./Card.css";
 
-function Card(props) {
+function Card({ card }) {
     let statusText;
 
-    if(props.cardOpenSpots === 0) {
+    if(card.openSpots === 0) {
         statusText = "Sold Out";
-    } else if(props.cardCountry === "Online") {
+    } else if(card.location === "Online") {
         statusText = "Online"
     }
 
@@ -15,24 +15,24 @@ function Card(props) {
             <div className="card">
                 <div className="card-image-container">
                     {statusText && <p className="card-status">{statusText}</p>}
-                    <img src={`images/${props.cardImage}`} alt="Katie Zaferes" className="card-image"/>
+                    <img src={`images/${card.coverImg}`} alt="Katie Zaferes" className="card-image"/>
                 </div>
 
                 <div className="card-description">
                     <div className="line-1">
                         <img src="images/star.png" alt="star" className="card-star"/>
-                        <p className="card-grade">{props.cardGrade}</p>
-                        <p className="card-reviews">({props.cardReviews})</p>
-                        <p className="card-country">{props.cardCountry}</p>
+                        <p className="card-grade">{card.stats.rating}</p>
+                        <p className="card-reviews">({card.stats.reviews})</p>
+                        <p className="card-country">{card.location}</p>
                     </div>
 
                     <div className="line-2">
-                        <p className="card-text">{props.cardText}</p>
+                        <p className="card-text">{card.title}</p>
                     </div>
 
                     <div className="line-3">
                         <p className="card-price">
-                            <b>From {props.cardPrice}</b> / person
+                            <b>From {card.price}</b> / person
                         </p>
                     </div>
                 </div> 
