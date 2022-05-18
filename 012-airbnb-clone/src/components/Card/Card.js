@@ -3,10 +3,18 @@ import React from "react";
 import "./Card.css";
 
 function Card(props) {
+    let statusText;
+
+    if(props.cardOpenSpots === 0) {
+        statusText = "Sold Out";
+    } else if(props.cardCountry === "Online") {
+        statusText = "Online"
+    }
+
     return (
             <div className="card">
                 <div className="card-image-container">
-                    {props.cardOpenSpots === 0 && <p className="card-status">Sold Out</p>}
+                    {statusText && <p className="card-status">{statusText}</p>}
                     <img src={`images/${props.cardImage}`} alt="Katie Zaferes" className="card-image"/>
                 </div>
 
