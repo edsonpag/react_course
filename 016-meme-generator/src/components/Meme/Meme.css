@@ -1,8 +1,16 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.6rem;
+}
+
 .form {
     margin-top: 3.6rem;
 
+    width: 100vw;
     display: grid;
-    grid-template-columns: 30% 30%;
+    grid-template-columns: 23rem 23rem;
 
     grid-template-areas: 
     "input1 input2"
@@ -35,4 +43,9 @@ button {
     color: white;
 
     cursor: pointer;
+}
+
+.meme-image {
+    width: 47.7rem;
+    border-radius: 0.2rem;
 }
