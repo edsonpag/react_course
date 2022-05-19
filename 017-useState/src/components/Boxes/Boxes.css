@@ -1,0 +1,13 @@
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    border-radius: 0.6rem;
+    border: 0.2rem solid black;
+    
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem;
+}

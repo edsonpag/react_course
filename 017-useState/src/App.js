@@ -6,12 +6,12 @@ import State from "./components/State";
 import State02 from "./components/State02";
 import State03 from "./components/State03";
 
+import Boxes from "./components/Boxes/Boxes";
+
 function App() {
     return(
         <div>
-            <State />
-            <State02 />
-            <State03 />
+            <Boxes darkMode={true}/>
         </div>
     );
 }
