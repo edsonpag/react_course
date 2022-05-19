@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import "./State.css";
 
+import Star from "./Star";
+
 function State03() {
 
     const [ contact, setContact ] = useState({
@@ -12,10 +14,7 @@ function State03() {
         isFavorite: true
     });
 
-    let starIcon = contact.isFavorite ? <i className="bi bi-star-fill"></i> : 
-    <i className="bi bi-star"></i>;
-
-    function toogleFavorite() {
+    function changeIsFavorite() {
         setContact((prevContact) => {
             return {
                 ...prevContact,
@@ -27,9 +26,7 @@ function State03() {
     return(
         <div className="card">
             <img src="images/img_avatar.png" alt="avatar" className="avatar-img" />
-            <div onClick={toogleFavorite}>
-                {starIcon}
-            </div>
+            <Star isFilled={contact.isFavorite} changeIsFavorite={changeIsFavorite}/>
             <h2>{contact.firstName} {contact.lastName}</h2>
             <p>{contact.phone}</p>
             <p>{contact.email}</p>
