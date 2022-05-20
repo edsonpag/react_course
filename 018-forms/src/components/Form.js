@@ -27,11 +27,14 @@ function Form() {
         });
     }
 
-    console.log(formData)
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log(formData);
+    }
 
     return (
 
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
             type="text"
             placeholder="first name"
@@ -121,6 +124,8 @@ function Form() {
                     <option value="yellow">Yellow</option>
                 </select>
             </div>
+
+            <button>Submit</button>
         </form>
     );
 }
