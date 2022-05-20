@@ -1,0 +1,17 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-app {
+    background-color: white;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+
+    margin: 5rem;
+    padding: 3rem;
+
+    width: 50vw;
+}

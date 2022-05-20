@@ -1,0 +1,40 @@
+.task-container {
+    background-color: rgba(245, 245, 245, 0.1);
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+}
+
+.task-btns {
+    padding: 1rem;
+    position: relative;
+}
+
+.task-checkbox {
+    cursor: pointer;
+
+    transform: scale(1.2);
+}
+
+.task-edit-icon {
+    cursor: pointer;
+    color: blue;
+
+    position: absolute;
+    right: 3rem;
+}
+
+.task-delete-icon {
+    cursor: pointer;
+    color: red;
+
+
+    position: absolute;
+    right: 1rem;
+}
+
+.task-text-container {
+    padding: 1rem;
+
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
