@@ -8,7 +8,7 @@ import jokesData from "./components/Joke/JokesData.json";
 
 function App() {
     const jokesElements = jokesData.map((joke) => {
-        return <Joke setup={joke.setup} punchline={joke.punchline}/>
+        return <Joke setup={joke.setup} punchline={joke.punchline} key={joke.setup} />
     });
 
     return (
