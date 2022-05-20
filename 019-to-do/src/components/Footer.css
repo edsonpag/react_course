@@ -1,0 +1,23 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pending-tasks {
+    font-size: 1.2rem;
+}
+
+.clear-all-btn {
+    cursor: pointer;
+    height: 3.5rem;
+    width: 9rem;
+
+    background-color: red;
+    border: none;
+    border-radius: 0.5rem;
+
+    color: white;
+    text-transform: uppercase;
+
+}

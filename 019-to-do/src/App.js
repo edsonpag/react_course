@@ -3,6 +3,7 @@ import './App.css';
 
 import AddTask from './components/AddTask';
 import Task from './components/Task';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -54,11 +55,23 @@ function App() {
     });
   }
 
+  function clearAll() {
+    setAllTasks([]);
+  }
+
+
   const allTasksElements = allTasks.map((task) => {
     return <Task key={task.task} task={task}
     handleCheboxChange={handleCheboxChange}
     handleEditTask={handleEditTask}
     handleDeleteTask={handleDeleteTask} />
+  });
+  
+  let pendingTasks = 0;
+  allTasks.forEach((task) => {
+    if(!task.isFinished) {
+      pendingTasks += 1;
+    }
   });
   
   return (
@@ -67,6 +80,7 @@ function App() {
         <h1 className="title">Todo App</h1>
         <AddTask addNewTask={addNewTask}/>
         {allTasksElements}
+        <Footer pendingTasks={pendingTasks} clearAll={clearAll}/>
       </div>
     </div>
   );
