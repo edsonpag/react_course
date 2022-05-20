@@ -23,6 +23,10 @@ function AddTask(props) {
     function handleSubmit(event) {
         event.preventDefault();
         props.addNewTask(formData);
+        setFormData({
+            task: "",
+            isFinished: false
+        });
     }
 
     return (

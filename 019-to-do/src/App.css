@@ -15,3 +15,10 @@
 
     width: 50vw;
 }
+
+
+@media screen and (max-width: 768px) {
+    div.todo-app {
+        width: 95vw;
+    }
+}

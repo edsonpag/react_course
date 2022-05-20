@@ -10,7 +10,7 @@ function App() {
 
   function addNewTask(newTask) {
 
-    const id = allTasks.length + 1;
+    const id = allTasks.length + 1 + Math.floor(Math.random() * 100000);
 
     setAllTasks((prevAllTasks) => {
       return [...prevAllTasks, {
@@ -31,8 +31,34 @@ function App() {
     });
   }
 
+  function handleEditTask(id) {
+    const editedTask = prompt("Digite a tarefa: ");
+
+    setAllTasks((prevAllTasks) => {
+      return prevAllTasks.map((task) => {
+        if(task.id === id) {
+          task.task = editedTask;
+        }
+
+        return task;
+      })
+    });
+  }
+
+  function handleDeleteTask(id) {
+    setAllTasks((prevAllTasks) => {
+      return prevAllTasks.filter((task) => {
+        return task.id !== id;
+      })
+
+    });
+  }
+
   const allTasksElements = allTasks.map((task) => {
-    return <Task key={task.task} task={task} handleCheboxChange={handleCheboxChange} />
+    return <Task key={task.task} task={task}
+    handleCheboxChange={handleCheboxChange}
+    handleEditTask={handleEditTask}
+    handleDeleteTask={handleDeleteTask} />
   });
   
   return (

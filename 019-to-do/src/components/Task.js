@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Task.css";
 
-function Task({ task, handleCheboxChange }) {
+function Task({ task, handleCheboxChange, handleEditTask, handleDeleteTask }) {
 
     return (
         <div className="task-container">
@@ -13,8 +13,16 @@ function Task({ task, handleCheboxChange }) {
                 checked={task.isFinished}
                 onChange={() => handleCheboxChange(task.id)}
                 />
-                <i className="bi bi-pencil-square task-edit-icon"></i>
-                <i className="bi bi-trash2 task-delete-icon"></i>
+
+                <i 
+                onClick={() => handleEditTask(task.id)}
+                className="bi bi-pencil-square task-edit-icon">
+                </i>
+
+                <i 
+                onClick={() => handleDeleteTask(task.id)}
+                className="bi bi-trash2 task-delete-icon">
+                </i>
             </div>
 
             <div className="task-text-container">
