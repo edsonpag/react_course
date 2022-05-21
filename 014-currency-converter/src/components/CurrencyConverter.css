@@ -28,7 +28,8 @@
     font-size: 1.8rem;
 }
 
-.convert-btn {
+.convert-btn,
+.swap-btn {
     cursor: pointer;
     width: 28rem;
     height: 4rem;
@@ -38,7 +39,14 @@
 
     font-size: 1.8rem;
     color: white;
+}
+
+.convert-btn {
     background-color: blue;
+}
+
+.swap-btn {
+    background-color: rgb(72, 255, 0);
 }
 
 

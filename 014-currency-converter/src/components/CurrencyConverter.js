@@ -76,6 +76,17 @@ function CurrencyConverter() {
         });
     }
 
+    function handleSwap() {
+        setFormData((prevformData) => {
+            return {
+                ...prevformData,
+                fromCurrency: prevformData.toCurrency,
+                toCurrency: prevformData.fromCurrency,
+                output: false
+            }
+        });
+    }
+
     const allCurrenciesElements = allCurrencies.map((currency) => {
 
         return (
@@ -127,6 +138,7 @@ function CurrencyConverter() {
 
             {formData.output && <ConvertOutput formData={formData} /> }
             <button className="convert-btn">Converter</button>
+            <button type="button" className="swap-btn" onClick={handleSwap}>Swap</button>
         </form>
         
     );
