@@ -10,7 +10,7 @@ function Meme() {
         bottomText: "",
         image: "https://i.imgflip.com/1g8my4.jpg"
     });
-
+    
     const [ allMemes, setAllMemes ] = useState(data);
 
     function getRandomImage() {
@@ -25,6 +25,18 @@ function Meme() {
         });
     }
 
+
+    function handleChange(event) {
+        const { name, value } = event.target;
+
+        setMeme((prevMeme) => {
+            return {
+                ...prevMeme,
+                [name]: value
+            }
+        });
+    }
+
     return(
         <main>
             <div className="form">
@@ -33,6 +45,8 @@ function Meme() {
                 name="topText"
                 id="top-text"
                 placeholder="Digite alguma coisa"
+                value={meme.topText}
+                onChange={handleChange}
                 autoFocus required
                 />
 
@@ -41,6 +55,8 @@ function Meme() {
                 name="bottomText"
                 id="bottom-text"
                 placeholder="Digite alguma coisa"
+                value={meme.bottomText}
+                onChange={handleChange}
                 required
                 />
 
@@ -49,8 +65,8 @@ function Meme() {
 
             <div className="image-container">
                 <img src={meme.image} alt="Meme image" className="meme-image" />
-                <h3 className="top-meme">asdasdasd</h3>
-                <h3 className="bottom-meme">asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd</h3>
+                <h3 className="top-meme">{meme.topText}</h3>
+                <h3 className="bottom-meme">{meme.bottomText}</h3>
             </div>
         </main>
 
