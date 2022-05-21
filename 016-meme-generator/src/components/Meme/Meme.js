@@ -8,8 +8,8 @@ function Meme() {
     useEffect(() => {
         const apiUrl = "https://api.imgflip.com/get_memes";
 
-        fetch(apiUrl).
-        then(res => res.json())
+        fetch(apiUrl)
+        .then(res => res.json())
         .then((res) => {
             setAllMemes(res.data.memes);
         })
@@ -70,7 +70,7 @@ function Meme() {
             </div>
 
             <div className="image-container">
-                <img src={meme.image} alt="Meme image" className="meme-image" />
+                <img src={meme.image} alt="Meme" className="meme-image" />
                 <h3 className="top-meme">{meme.topText}</h3>
                 <h3 className="bottom-meme">{meme.bottomText}</h3>
             </div>
