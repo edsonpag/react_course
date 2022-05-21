@@ -7,7 +7,9 @@ async function convertCurrencies(amount, fromCurrency, toCurrency) {
 
     const response = await Axios.get(URL);
 
-    const result = response.data[`${fromCurrency}_${toCurrency}`];
+    const value = response.data[`${fromCurrency}_${toCurrency}`];
+
+    const result = (parseFloat(amount) * parseFloat(value)).toFixed(2);
 
     return result;
 }
