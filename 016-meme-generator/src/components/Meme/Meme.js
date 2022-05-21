@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 
+import getMemes from "../api/getMemes";
+
 import "./Meme.css";
 
 function Meme() {
     const [ allMemes, setAllMemes ] = useState([]);
 
     useEffect(() => {
-        const apiUrl = "https://api.imgflip.com/get_memes";
-
-        fetch(apiUrl)
-        .then(res => res.json())
-        .then((res) => {
-            setAllMemes(res.data.memes);
+        getMemes()
+        .then((data) => {
+            setAllMemes(data);
+        })
+        .catch((error) => {
+            console.log(error)
         })
     }, []);
 
