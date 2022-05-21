@@ -8,7 +8,7 @@ function Meme() {
     const [ meme, setMeme ] = React.useState({
         topText: "",
         bottomText: "",
-        image: "https://i.imgflip.com/1g8my4.jpg"
+        image: data.data.memes[Math.floor(Math.random() * data.data.memes.length)].url
     });
     
     const [ allMemes, setAllMemes ] = useState(data);
