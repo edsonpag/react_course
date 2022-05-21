@@ -45,7 +45,37 @@ button {
     cursor: pointer;
 }
 
-.meme-image {
+.image-container {
+    position: relative;
     width: 47.7rem;
-    border-radius: 0.2rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.meme-image {
+    width: 100%;
+}
+
+.top-meme,
+.bottom-meme {
+    position: absolute;
+    padding: 2rem;
+
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+    color: white;
+    -webkit-text-stroke: 0.2rem black;
+}
+
+
+.top-meme {
+    top: 0;
+}
+
+.bottom-meme {
+    bottom: 0;
 }

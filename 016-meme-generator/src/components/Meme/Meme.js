@@ -28,14 +28,30 @@ function Meme() {
     return(
         <main>
             <div className="form">
-                <input type="text" name="top-text" id="top-text" placeholder="Digite alguma coisa" autoFocus required/>
+                <input
+                type="text"
+                name="topText"
+                id="top-text"
+                placeholder="Digite alguma coisa"
+                autoFocus required
+                />
 
-                <input type="text" name="bottom-text" id="bottom-text" placeholder="Digite alguma coisa" required/>
+                <input
+                type="text"
+                name="bottomText"
+                id="bottom-text"
+                placeholder="Digite alguma coisa"
+                required
+                />
 
                 <button onClick={getRandomImage}>Get a new meme image 🎨</button>
             </div>
 
-            <img src={meme.image} alt="Meme image" className="meme-image" />
+            <div className="image-container">
+                <img src={meme.image} alt="Meme image" className="meme-image" />
+                <h3 className="top-meme">asdasdasd</h3>
+                <h3 className="bottom-meme">asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd</h3>
+            </div>
         </main>
 
     );
