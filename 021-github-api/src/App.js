@@ -1,14 +1,30 @@
+import React, { useState } from 'react';
 import './App.css';
 
 import Form from './components/Form/Form';
+import User from './components/User/User';
 
-
-const API_KEY = "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";
+import getUserInformation from './API/getUserInformation';
 
 function App() {
+
+  const [ user, setUser ] = useState({
+    display: false
+  });
+
+  async function addNewUser(username) {
+    const newUser = await getUserInformation(username);
+
+    setUser({
+      display: true,
+      ...newUser
+    });
+  }
+
   return (
     <div className="App">
-      <Form />
+      <Form addNewUser={addNewUser}/>
+      { user.display && <User user={user} />}
     </div>
   );
 }

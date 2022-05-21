@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import "./Form.css";
 
-function Form() {
+function Form(props) {
     const [ formData, setFormData ] = useState({
         username: ""
     });
@@ -19,7 +19,7 @@ function Form() {
     function handleSubmit(event) {
         event.preventDefault();
 
-        console.log(formData.username);
+        props.addNewUser(formData.username);
     }
 
     return (
@@ -30,6 +30,7 @@ function Form() {
             className="search-input"
             value={formData.username}
             onChange={handleChange}
+            required
             />
 
             <button className="search-btn">Search</button>

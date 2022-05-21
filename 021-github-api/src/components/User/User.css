@@ -1,0 +1,31 @@
+.user-card {
+    width: min(50rem, 100%);
+
+    margin-inline: auto;
+    margin-top: 5rem;
+    padding: 5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.user-avatar {
+    width: min(25rem, 50%);
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+.user-username {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    line-height: 3rem;
+}
+
+.user-followers,
+.user-repository-count {
+    font-size: 1.4rem;
+}
