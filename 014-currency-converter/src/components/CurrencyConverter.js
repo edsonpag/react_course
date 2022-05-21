@@ -41,6 +41,11 @@ function CurrencyConverter() {
                 alert("Digite apenas números, por favor");
                 return;
             }
+
+            if(value.length > 9) {
+                alert("Tamanho maximo de 9 digitos");
+                return;
+            }
         }
 
         setFormData((prevFormData) => {
