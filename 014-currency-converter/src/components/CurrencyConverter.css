@@ -1,0 +1,50 @@
+.currencies-container {
+    width: 70%;
+    margin-inline: auto;
+    margin-top: 4rem;
+    padding: 4rem;
+
+    background-color: white;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
+}
+
+.currencies-container div {
+    display: flex;
+    flex-direction: column;
+}
+
+.currencies-container input, select {
+    height: 4rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    text-indent: 1rem;
+    font-size: 1.8rem;
+}
+
+.convert-btn {
+    cursor: pointer;
+    width: 28rem;
+    height: 4rem;
+
+    border-radius: 0.5rem;
+    border: none;
+
+    font-size: 1.8rem;
+    color: white;
+    background-color: blue;
+}
+
+
+@media screen and (max-width: 768px) {
+    div.currencies-container {
+        width: 100%;
+        padding: 4rem 2rem;
+    }
+}
