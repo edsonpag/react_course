@@ -1,0 +1,23 @@
+.header {
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-inline: 1rem;
+    border-bottom: 0.1rem solid var(--lines-color);
+}
+
+.profile-photo {
+    height: 2.4rem;
+    border-radius: 50%;
+}
+
+.twitter-icon {
+    color: var(--twitter-color);
+}
+
+.stars-icon {
+    color: white;
+}
