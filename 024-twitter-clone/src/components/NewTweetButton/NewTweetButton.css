@@ -1,0 +1,19 @@
+.new-tweet-btn {
+    position: fixed;
+    bottom: 8vh;
+    right: 2.5vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 5rem;
+    width: 5rem;
+    background-color: var(--new-tweet-btn-color);
+    border-radius: 50%;
+}
+
+.new-tweet-icon {
+    height: 3rem;
+    width: 3rem;
+}

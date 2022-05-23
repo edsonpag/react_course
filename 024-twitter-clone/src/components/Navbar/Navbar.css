@@ -1,0 +1,27 @@
+.navbar {
+    height: 4rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    bottom: 0;
+    
+    background-color: #000;
+    padding-inline: 2rem;
+}
+
+.nav-links {
+    list-style: none;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links li svg {
+    height: 2rem;
+    width: 2rem;
+}
