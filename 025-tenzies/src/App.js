@@ -1,9 +1,26 @@
 import './App.css';
 
+import Header from './components/Header/Header';
+import Dice from './components/Dice/Dice';
+import Roll from './components/Roll/Roll';
+
 function App() {
   return (
     <div className="app">
-      <h1>App</h1>
+        <Header />
+        <div className="dice-container">
+          <Dice />
+          <Dice />
+          <Dice />
+          <Dice />
+          <Dice />
+          <Dice />
+          <Dice />
+          <Dice />
+          <Dice />
+          <Dice />
+        </div>
+        <Roll />
     </div>
   );
 }

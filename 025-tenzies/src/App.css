@@ -1,0 +1,23 @@
+.app {
+    background-color: var(--tenzie-background-color);
+    border-radius: 1rem;
+
+    width: 32rem;
+    height: 32rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dice-container {
+    width: 100%;
+    height: auto;
+
+    padding-inline: 3.4rem;
+    margin-bottom: 2.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+}

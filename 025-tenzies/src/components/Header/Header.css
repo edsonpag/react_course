@@ -1,0 +1,22 @@
+header {
+    margin-bottom: 2.3rem;
+}
+
+.title {
+    line-height: 3rem;
+    letter-spacing: -0.03rem;
+    color: var(--primary-text-color);
+    font-size: 2.5rem;
+
+    margin-top: 3.3rem;
+    text-align: center;
+}
+
+.game-summary {
+    color: var(--secondary-text-color);
+    font-size: 1.31rem;
+    line-height: 1.6rem;
+    text-align: center;
+
+    padding-inline: 4.3rem;
+}
