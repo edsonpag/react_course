@@ -13,6 +13,13 @@
     justify-content: center;
 }
 
+.timer {
+    margin-bottom: 2.3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+}
+
 .dice-container {
     width: 100%;
     height: auto;
@@ -24,4 +31,22 @@
     gap: 1.8rem;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+button {
+    width: 12rem;
+    height: 3.5rem;
+
+    border-radius: 0.381rem;
+    border: none;
+    outline: none;
+
+    background-color: var(--start-button-background-color);
+    color: white;
+
+    font-weight: bold;
+    line-height: 1.9rem;
+    font-size: 1.63rem;
+
+    cursor: pointer;
 }

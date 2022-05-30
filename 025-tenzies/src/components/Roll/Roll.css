@@ -7,19 +7,5 @@
 }
 
 .roll {
-    width: 9.2rem;
-    height: 3.5rem;
-
-    border-radius: 0.381rem;
-    border: none;
-    outline: none;
-
     background-color: var(--button-background-color);
-
-    color: white;
-    font-weight: bold;
-    line-height: 1.9rem;
-    font-size: 1.63rem;
-
-    cursor: pointer;
 }

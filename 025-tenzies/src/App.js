@@ -13,6 +13,34 @@ function App() {
   const [ dice, setDice ] = useState(allNewDice());
   const [ tenzies, setTenzies ] = useState(false);
   const [ rolls, setRolls ] = useState(0);
+  const [ isStarted, setIsStarted ] = useState(false);
+
+  const [ timer, setTimer ] = useState({});
+  const [ intervalId, setIntervalId ] = useState("");
+
+  function startTimer() { 
+    const id = setInterval(() => {
+      setTimer(prevTimer => {
+        const newTimer = {
+          timerCounter: prevTimer.timerCounter || 0,
+          hours: prevTimer.hours || 0,
+          minutes: prevTimer.minutes || 0,
+          seconds: prevTimer.seconds || 0
+        }
+
+
+        newTimer.timerCounter = newTimer.timerCounter + 1;
+        newTimer.hours = Math.floor(newTimer.timerCounter / 60 / 60);
+        newTimer.minutes = Math.floor(newTimer.timerCounter / 60 % 60);
+        newTimer.seconds = newTimer.timerCounter % 60;
+      
+
+        return newTimer;
+      });
+    }, 1000);
+
+    setIntervalId(id);
+  }
 
   useEffect(() => {
     const value = dice[0].value;
@@ -20,6 +48,13 @@ function App() {
     const gameStatus = dice.every((die) => {
       return die.isHeld === true && die.value === value;
     })
+
+    if(gameStatus) {
+      setIsStarted(false);
+      if(intervalId !== "") {
+        clearInterval(intervalId);
+      }
+    }
 
     setTenzies(gameStatus);
   }, [dice])
@@ -53,11 +88,6 @@ function App() {
     })
   }
 
-  function newGame() {
-    setTenzies(false);
-    setDice(allNewDice());
-  }
-
   function holdDice(id) {
     setDice((prevDice) => {
 
@@ -72,6 +102,15 @@ function App() {
     });
   }
 
+  function startGame() {
+    setTenzies(false);
+    setRolls(0);
+    setTimer({});
+    setDice(allNewDice());
+    setIsStarted(true);
+    startTimer();
+  }
+
   const diceElements = dice.map((die) => {
     return <Dice
     key={die.id}
@@ -83,12 +122,27 @@ function App() {
 
   return (
     <div className="app">
+        <div className="timer">
+          {timer.hours > 0 && <span className="hours">{timer.hours}h</span>}
+          {timer.minutes > 0 && <span className="minutes">{timer.minutes}m</span>}
+          {timer.seconds >= 0 && <span className="seconds">{timer.seconds}s</span>}
+        </div>
+
         {tenzies && <Confetti />}
         <Header />
-        <div className="dice-container">
-          {diceElements}
-        </div>
-        <Roll rollDice={rollDice} newGame={newGame} tenzies={tenzies} rolls={rolls}/>
+
+        {isStarted 
+        ?
+        <>
+          <div className="dice-container">
+            {diceElements}
+          </div>
+          <Roll rollDice={rollDice} rolls={rolls}/>
+        </>
+        :
+        <button className="start-game" onClick={startGame}>Start Game</button>
+        }
+
     </div>
   );
 }
