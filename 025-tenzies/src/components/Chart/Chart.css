@@ -1,0 +1,10 @@
+.chart {
+    position: absolute;
+
+    top: 1vh;
+    right: 1.5vw;
+}
+
+.chart svg {
+    cursor: pointer;
+}

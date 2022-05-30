@@ -7,6 +7,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Dice from './components/Dice/Dice';
 import Roll from './components/Roll/Roll';
+import Chart from './components/Chart/Chart';
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
   const [ isStarted, setIsStarted ] = useState(false);
 
   const [ timer, setTimer ] = useState({});
+  const [ bestTime, setBestTime ] = useState(() => {
+    return JSON.parse(localStorage.getItem("bestTime")) || {};
+  });
   const [ intervalId, setIntervalId ] = useState("");
 
   function startTimer() { 
@@ -42,6 +46,10 @@ function App() {
     setIntervalId(id);
   }
 
+  function saveToLocalStorage() {
+    localStorage.setItem("bestTime", JSON.stringify(timer));
+  }
+
   useEffect(() => {
     const value = dice[0].value;
 
@@ -51,6 +59,16 @@ function App() {
 
     if(gameStatus) {
       setIsStarted(false);
+
+      const localStorageBestTime = JSON.parse(localStorage.getItem("bestTime"));
+
+      if(localStorageBestTime === null) {
+        saveToLocalStorage();
+      } else {
+        localStorageBestTime.timerCounter > timer.timerCounter 
+        && saveToLocalStorage();
+      }
+
       if(intervalId !== "") {
         clearInterval(intervalId);
       }
@@ -122,6 +140,7 @@ function App() {
 
   return (
     <div className="app">
+        <Chart />
         <div className="timer">
           {timer.hours > 0 && <span className="hours">{timer.hours}h</span>}
           {timer.minutes > 0 && <span className="minutes">{timer.minutes}m</span>}
