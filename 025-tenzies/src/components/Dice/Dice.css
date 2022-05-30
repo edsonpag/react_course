@@ -15,7 +15,17 @@
 .dice-number {
     color: var(--secondary-text-color);
     font-weight: bold;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1rem);
+    grid-auto-rows: 1rem;
+
+    justify-items: center;
+    align-items: center;
+}
+
+.dots::before {
+    content: "\2022";
+    color: black;
     font-size: 2rem;
-    line-height: 2.4rem;
-    text-align: center;
 }

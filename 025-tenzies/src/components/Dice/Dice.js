@@ -1,4 +1,5 @@
 import React from "react";
+import { nanoid } from "nanoid";
 
 import "./Dice.css";
 
@@ -13,9 +14,17 @@ function Dice(props) {
         : "white"
     }
 
+    const dotsElements = [];
+
+    for(let i = 0; i < props.value; i++) {
+         dotsElements.push(<div key={nanoid()} className="dots"></div>);
+    }
+
     return (
         <div className="dice" style={styles} onClick={() => props.holdDice(props.id)}>
-            <p className="dice-number">{props.value}</p>
+            <div className="dice-number">
+                {dotsElements}
+            </div>
         </div>
 
     );
