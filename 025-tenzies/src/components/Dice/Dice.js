@@ -2,11 +2,11 @@ import React from "react";
 
 import "./Dice.css";
 
-function Dice() {
+function Dice(props) {
 
     return (
         <div className="dice">
-            <p className="dice-number">1</p>
+            <p className="dice-number">{props.value}</p>
         </div>
     );
 }

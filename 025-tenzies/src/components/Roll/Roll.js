@@ -2,10 +2,10 @@ import React from "react";
 
 import "./Roll.css";
 
-function Roll() {
+function Roll(props) {
 
     return (
-        <button className="roll">Roll</button>
+        <button className="roll" onClick={props.rollDice}>Roll</button>
     );
 }
 
