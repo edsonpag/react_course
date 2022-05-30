@@ -2,12 +2,15 @@
     background-color: var(--tenzie-background-color);
     border-radius: 1rem;
 
-    width: 32rem;
-    height: 32rem;
+    width: min(32rem, 100%);   
+    height: auto;
+    padding-block: 3.2rem;
     
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .dice-container {
@@ -15,9 +18,10 @@
     height: auto;
 
     padding-inline: 3.4rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
 
     display: flex;
-    flex-wrap: wrap;
     gap: 1.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }

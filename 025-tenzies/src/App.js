@@ -12,6 +12,7 @@ function App() {
 
   const [ dice, setDice ] = useState(allNewDice());
   const [ tenzies, setTenzies ] = useState(false);
+  const [ rolls, setRolls ] = useState(0);
 
   useEffect(() => {
     const value = dice[0].value;
@@ -41,6 +42,10 @@ function App() {
   }
 
   function rollDice() {
+    setRolls((prevRolls) => {
+      return prevRolls + 1;
+    });
+
     setDice((prevDice) => {
       return prevDice.map((die) => {
         return die.isHeld ? die : { ...die, id: nanoid(), value: Math.ceil(Math.random() * 6) }
@@ -83,7 +88,7 @@ function App() {
         <div className="dice-container">
           {diceElements}
         </div>
-        <Roll rollDice={rollDice} newGame={newGame} tenzies={tenzies}/>
+        <Roll rollDice={rollDice} newGame={newGame} tenzies={tenzies} rolls={rolls}/>
     </div>
   );
 }
