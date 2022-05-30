@@ -7,16 +7,20 @@
     background-color: #333;
 
     border-radius: 0.8rem;
+
+    animation: show 300ms ease 0s 1 normal;
 }
 
-.chart-icon {
+.chart-icon,
+.close-icon {
     position: absolute;
 
     top: 1vh;
-    right: 1.5vw;
+    right: 1vw;
 }
 
-.chart-icon svg {
+.chart-icon,
+.close-icon svg {
     cursor: pointer;
 }
 
@@ -33,4 +37,14 @@
     font-size: 2.4rem;
     text-align: center;
     padding-inline: 3rem;
+}
+
+@keyframes show {
+    from {
+        transform: translateY(-50%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
