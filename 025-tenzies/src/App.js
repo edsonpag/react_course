@@ -12,7 +12,7 @@ function App() {
   const [ dice, setDice ] = useState(allNewDice());
 
   function allNewDice() {
-    const newDiceArr = [];
+    const diceArray = [];
 
     for(let i = 0; i < 10; i++) {
       const newDie = {
@@ -21,18 +21,41 @@ function App() {
         isHeld: false
       }
 
-      newDiceArr.push(newDie);
+      diceArray.push(newDie);
     }
 
-    return newDiceArr;
+    return diceArray;
   }
 
   function rollDice() {
-    setDice(allNewDice());
+    setDice((prevDice) => {
+      return prevDice.map((die) => {
+        return die.isHeld ? die : { ...die, id: nanoid(), value: Math.ceil(Math.random() * 6) }
+      })
+    })
+  }
+
+  function holdDice(id) {
+    setDice((prevDice) => {
+
+      return prevDice.map((die) => {
+        if(die.id === id) {
+          die.isHeld = !die.isHeld;
+        }
+
+        return die;
+      })
+
+    });
   }
 
   const diceElements = dice.map((die) => {
-    return <Dice key={die.id} value={die.value}/>
+    return <Dice
+    key={die.id}
+    id={die.id}
+    value={die.value}
+    isHeld={die.isHeld}
+    holdDice={holdDice}/>
   })
 
   return (
