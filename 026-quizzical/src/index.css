@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+  --background-color: #f4f6fb;
+  --primary-color: #293264;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--background-color);
+}
