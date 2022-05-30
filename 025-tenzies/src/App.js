@@ -69,6 +69,8 @@ function App() {
         && saveToLocalStorage();
       }
 
+      setBestTime(JSON.parse(localStorage.getItem("bestTime")));
+
       if(intervalId !== "") {
         clearInterval(intervalId);
       }
@@ -139,30 +141,33 @@ function App() {
   })
 
   return (
-    <div className="app">
-        <Chart />
-        <div className="timer">
-          {timer.hours > 0 && <span className="hours">{timer.hours}h</span>}
-          {timer.minutes > 0 && <span className="minutes">{timer.minutes}m</span>}
-          {timer.seconds >= 0 && <span className="seconds">{timer.seconds}s</span>}
-        </div>
-
+    <>
+      <div className="confetti-container">
         {tenzies && <Confetti />}
-        <Header />
+      </div>
 
-        {isStarted 
-        ?
-        <>
-          <div className="dice-container">
-            {diceElements}
-          </div>
-          <Roll rollDice={rollDice} rolls={rolls}/>
-        </>
-        :
-        <button className="start-game" onClick={startGame}>Start Game</button>
-        }
+      <div className="app">
+          <Chart bestTime={bestTime}/>
+          <div className="timer">
+            {timer.hours > 0 && <span className="hours">{timer.hours}h</span>}
+            {timer.minutes > 0 && <span className="minutes">{timer.minutes}m</span>}
+            {timer.seconds >= 0 && <span className="seconds">{timer.seconds}s</span>}
+          </div>  
+          <Header />
 
-    </div>
+          {isStarted 
+          ?
+          <>
+            <div className="dice-container">
+              {diceElements}
+            </div>
+            <Roll rollDice={rollDice} rolls={rolls}/>
+          </>
+          :
+          <button className="start-game" onClick={startGame}>Start Game</button>
+          }
+      </div>
+    </>
   );
 }
 

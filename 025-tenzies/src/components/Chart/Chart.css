@@ -1,10 +1,36 @@
-.chart {
+.chart-container {
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+
+    border-radius: 0.8rem;
+}
+
+.chart-icon {
     position: absolute;
 
     top: 1vh;
     right: 1.5vw;
 }
 
-.chart svg {
+.chart-icon svg {
     cursor: pointer;
+}
+
+.best-time {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+
+    color: white;
+    font-size: 2.4rem;
+    text-align: center;
+    padding-inline: 3rem;
 }
