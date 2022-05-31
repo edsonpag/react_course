@@ -1,0 +1,24 @@
+.questions-container {
+    margin-top: 4rem;
+    margin-left: 7.5rem;
+}
+
+
+@media screen and (max-width: 700px) {
+    .questions-container {
+        margin-left: 0;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-inline: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .answers-container {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+}

@@ -1,0 +1,20 @@
+.answer-btn {
+    min-width: 6.6rem;
+    height: 2.1rem;
+    padding-inline: 0.8rem;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.2rem;
+    color: var(--primary-color);
+    background-color: transparent;
+    
+    border-radius: 0.8rem;
+    border: 0.1rem solid var(--primary-color);
+
+    cursor: pointer;
+}
+
+.selected {
+    background-color: var(--selected-response-background-color);
+}

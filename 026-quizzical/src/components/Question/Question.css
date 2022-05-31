@@ -1,0 +1,21 @@
+.question {
+    width: min(50rem, 90%);
+    margin-bottom: 3rem;
+}
+
+.question-title {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    font-weight: 700;
+}
+
+.answers-container {
+    margin-top: 1.2rem;
+
+    display: flex;
+    column-gap: 1.3rem;
+
+    padding-bottom: 1.5rem;
+    border-bottom: 0.1rem solid var(--primary-color-transparent);
+}

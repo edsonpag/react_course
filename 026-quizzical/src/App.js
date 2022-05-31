@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 import Home from './components/Home/Home';
+import Quiz from './components/Quiz/Quiz';
 
 function App() {
 
@@ -14,9 +15,11 @@ function App() {
 
   return (
     <div className="app">
-      {isStarted 
-      ? <div>Ok</div>
-      : <Home start={start}/>
+      {isStarted
+      ? 
+        <Quiz />
+      :
+        <Home start={start}/>
       }
       
     </div>
