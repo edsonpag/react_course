@@ -5,7 +5,8 @@ import Answer from "../Answer/Answer";
 import "./Question.css";
 
 function Question(props) {
-
+    
+    // faz um map nas repostas
     const answersElement = props.answers.map(answer => {
         return (
             <Answer 
