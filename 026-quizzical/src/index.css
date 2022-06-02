@@ -11,6 +11,8 @@
   --primary-color: #293264;
   --primary-color-transparent: #29326452;
   --selected-response-background-color: #b9bdd1;
+  --submited-response-background-color: #94D7A2;
+  --correct-response-background-color: #F8BCBC;
 }
 
 body {

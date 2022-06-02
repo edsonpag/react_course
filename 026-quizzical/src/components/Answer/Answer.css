@@ -18,3 +18,16 @@
 .selected {
     background-color: var(--selected-response-background-color);
 }
+
+.answered {
+    background-color: var(--submited-response-background-color);
+}
+
+.correct {
+    background-color: var(--correct-response-background-color);
+}
+
+.incorrect {
+    border: 0.1rem solid var(--primary-color-transparent);
+    color: var(--primary-color-transparent);
+}

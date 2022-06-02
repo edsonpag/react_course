@@ -10,6 +10,9 @@ import "./Quiz.css";
 function Quiz() {
 
     const [ questions, setQuestions ] = useState([]);
+    const [ numberOfCorrectAnswers, setNumberOfCorrectAnswers ] = useState(0);
+    const [ hasSubmit, setHasSubmit ] = useState(false);
+    const [ newApiRequest, setNewApiRequest ] = useState(false);
 
     // api request
     useEffect(() => {
@@ -18,8 +21,12 @@ function Quiz() {
 
             // transformo a resposta
             const serializedData = response.map((item) => {
-                const allAnswers = [...item.incorrect_answers, item.correct_answer];
-                
+                const allAnswers = [...item.incorrect_answers];
+
+                // posição aleatoria da resposta correta
+                const position = Math.floor(Math.random() * (allAnswers.length + 1));
+                allAnswers.splice(position, 0, item.correct_answer);
+
                 const answers = allAnswers.map((answer) => {
                     return {
                         id: nanoid(),
@@ -39,7 +46,7 @@ function Quiz() {
                     difficulty: item.difficulty,
                     correct_answer: item.correct_answer,
                     incorrect_answers: item.incorrect_answers,
-                    type: item.type
+                    type: item.type,
                 }
             });
 
@@ -49,7 +56,7 @@ function Quiz() {
             console.log(error);
         });
 
-    }, []);
+    }, [newApiRequest]);
 
     // quando é clicado, define qual é o atual resposta selecionada
     function handleClick(questionId, answerId) {
@@ -70,11 +77,51 @@ function Quiz() {
         });
     }
 
-    //  quando é enviado os dados, verifica se as respostas estão corretas 
-    function handleSubmit(event) {
-        event.preventDefault();
-        // validar se todas as opções estão selecionadas
-        console.log(questions);
+    // checa se todas as perguntas foram respondidas
+    function checkIfAllQuestionsHaveAnAnswer() {
+        let allQuestionsHaveAnswer = true;
+
+        questions.forEach((question) => {
+            if(question.selectedAnswer.id === "") {
+                allQuestionsHaveAnswer = false;
+            }
+        });
+
+        return allQuestionsHaveAnswer;
+    }
+
+    //  avisa que a resposta foi enviada
+    function handleSubmit(event) {        
+        if(!checkIfAllQuestionsHaveAnAnswer()) {
+            alert("Responda todas as perguntas");
+            return;
+        }
+
+        handleNumberOfCorrectAnswers();
+        setHasSubmit(true);
+    }
+
+    // reinicia o jogo
+    function playAgain() {
+        setNewApiRequest(prevNewApiRequest => {
+            return !prevNewApiRequest;
+        });
+        setNumberOfCorrectAnswers(0);
+        setHasSubmit(false);
+        
+    }
+
+    // monitora a quantidade de respostas certas
+    function handleNumberOfCorrectAnswers() {
+        let correctAnswers = 0;
+
+        questions.forEach((question) => {
+            if(question.correct_answer === question.selectedAnswer.answer) {
+                correctAnswers++;
+            }
+        });
+
+        setNumberOfCorrectAnswers(correctAnswers);
     }
 
     // faz um map no array de questões
@@ -87,6 +134,8 @@ function Quiz() {
             answers={question.answers}
             handleClick={handleClick}
             selectedAnswer={question.selectedAnswer}
+            correctAnswer={question.correct_answer}
+            hasSubmit={hasSubmit}
             />
         );
     });
@@ -97,13 +146,27 @@ function Quiz() {
                 {questionsElement}
             </div>
 
-            <button
-            type="submit"
-            className="submit-btn"
-            onClick={handleSubmit}
-            >
-                Verificar respostas
-            </button>
+            {hasSubmit 
+            ?
+                <div className="play-again-container"> 
+                    <span className="score">Você acertou {numberOfCorrectAnswers}/{questions.length} questões</span>
+                    <button 
+                    className="btn"
+                    onClick={playAgain}
+                    >
+                        Jogar novamente
+                    </button>
+                </div>
+            :
+                <button
+                type="submit"
+                className="btn"
+                onClick={handleSubmit}
+                >
+                    Verificar respostas
+                </button>
+            }
+            
         </div>
     );
 }

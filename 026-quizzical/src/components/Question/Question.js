@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Answer from "../Answer/Answer";
 
@@ -16,6 +16,8 @@ function Question(props) {
             answerId={answer.id}
             answer={answer.answer} 
             handleClick={props.handleClick}
+            hasSubmit={props.hasSubmit}
+            correctAnswer={props.correctAnswer}
             />
         );
     });
