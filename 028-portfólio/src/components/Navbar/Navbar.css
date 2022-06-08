@@ -1,0 +1,176 @@
+.navbar-container {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    padding-left: 1rem;
+    z-index: 1;
+
+    height: var(--nav-height);
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--light-mode);
+}
+
+.fixed {
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.my-photo {
+    border-radius: 50%;
+}
+
+.burger-menu {
+    position: fixed;
+
+    top: 2rem;
+    right: 2rem;
+    z-index: 1;
+
+}
+
+.burger-menu div {
+    width: 2.9rem;
+    height: 0.2rem;
+    background-color: #000;
+    margin-block: 0.8rem;
+    cursor: pointer;
+
+    transition: 300ms ease transform;
+}
+
+.close-menu .line-1 {
+    transform: rotate(45deg) translateY(0.8rem);
+}
+
+.close-menu .line-2 {
+    display: none;
+}
+
+.close-menu .line-3 {
+    transform: rotate(130deg) translateY(0.7rem);
+}
+
+.navbar {
+    list-style: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--light-mode);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar-links {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.6rem;
+    letter-spacing: 0.3rem;
+}
+
+.navbar-links::after {
+    content: '';
+    display: block;
+    margin-top: 0.5rem;
+
+    background-color: var(--primary-color);
+    width: 0;
+    height: 0.2rem;
+    transition: width 200ms ease;
+}
+
+.navbar-links:hover::after {
+    width: 100%;
+}
+
+.color-theme-container {
+    background-color: #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    position: relative;
+
+    border-radius: 0.8rem;
+    width: 10rem;
+    height: 3.5rem;
+
+    cursor: pointer;
+}
+
+.switch-btn {
+    background-color: var(--primary-color);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border-radius: 0.8rem;
+    width: 50%;
+    height: 100%;
+
+    transition: left 300ms ease;
+}
+
+.color-theme-container svg {
+    fill: rgb(255, 187, 0);
+}
+
+@keyframes showMenu {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* TABLET VERSION */
+
+@media screen and (min-width: 768px) {
+    .burger-menu {
+        display: none;
+    }
+
+    nav.navbar-container {
+        position: fixed;
+        height: var(--nav-height);
+        width: 100vw;
+
+        padding-inline: 2rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul.navbar {
+        position: static;
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 2.5rem;
+    }
+
+    a.navbar-links {
+        font-size: 1.6rem;
+    }
+
+}

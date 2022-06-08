@@ -1,0 +1,17 @@
+body {
+    background-color: var(--background-color);
+    color: white;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    
+    border-radius: 0.8rem;
+}

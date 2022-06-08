@@ -1,0 +1,38 @@
+.projects-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    line-height: 150%;
+    letter-spacing: 0.08em;
+    font-size: 2rem;
+
+    margin-bottom: 1.6rem;
+}
+
+/* TABLET VERSION */
+
+@media screen and (min-width: 768px) {
+    div.projects-card-container {
+        margin-top: 2rem;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        column-gap: 8rem;
+
+        padding-inline: 3rem;
+    }
+}

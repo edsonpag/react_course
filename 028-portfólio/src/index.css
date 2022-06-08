@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+    --primary-color: #1fdf64;
+    --primary-color-dark: #00856F;
+    --text-color: #2a2a2a;
+    --light-mode: #fafafa;
+    --dark-mode: #333;
+
+    --nav-height: 8rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--light-mode);
+}
+
+body.darkmode,
+body.darkmode .navbar {
+    background-color: var(--dark-mode);
+    color: #fff;
+}
+
+body.darkmode .navbar-container {
+    background-color: var(--dark-mode);
+}
+
+body.darkmode .navbar-links {
+    color: #fff;
+}
+
+body.darkmode .burger-menu div {
+    background-color: #fff;
+}
+
+body.darkmode .color-theme-container {
+    background-color: #fff;
+}
+
+body.darkmode .switch-btn {
+    left: 50%;
+}
+
+body.darkmode .form-input {
+    background-color: var(--dark-mode);
+    color: white;
+}
+
+body.darkmode .textarea-message {
+    background-color: var(--dark-mode);
+    color: white;
+}
+
+body.darkmode .form-label-top {
+    background-color: var(--dark-mode);
+}

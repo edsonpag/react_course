@@ -1,0 +1,26 @@
+.back-to-top-btn {
+    position: fixed;
+
+    padding: 0;
+    background-color: transparent;
+
+    bottom: 1vh;
+    right: 3vw;
+
+    color: var(--primary-color);
+
+    animation: showBackToTopBtn 1s ease 0s 1 normal;
+}
+
+@keyframes showBackToTopBtn {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}

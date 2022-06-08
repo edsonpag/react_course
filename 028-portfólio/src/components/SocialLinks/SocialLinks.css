@@ -1,0 +1,12 @@
+.social-links-container {
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+.social-links-items a {
+    text-decoration: none;
+}

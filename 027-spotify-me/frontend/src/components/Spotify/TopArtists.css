@@ -1,0 +1,13 @@
+.top-artists-container {
+    margin-block: 3rem;
+}
+
+.artists {
+    margin-top: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
