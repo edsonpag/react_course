@@ -1,5 +1,7 @@
 import React from "react";
 
+import Category from "./components/Category/Category";
+
 import "./categories.scss";
 
 function App() {
@@ -37,16 +39,7 @@ function App() {
     <div className="categories-container">
       {categories.map((category) => {
         return (
-          <div className="category-container" key={category.id}>
-            <div className="background-image" style={{
-              backgroundImage: `url(${category.imageUrl})`
-            }}/>
-            
-            <div className="category-body">
-              <h4>{category.title}</h4>
-              <p>Shop Now</p>
-            </div>
-          </div>
+          <Category key={category.id} category={category} />
         );
       })}
     </div>
