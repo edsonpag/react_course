@@ -1,0 +1,19 @@
+body {
+  background: linear-gradient(
+    to left,
+    rgba(7, 27, 82, 1) 0%,
+    rgba(0, 128, 128, 1) 100%
+  );
+
+  text-align: center;
+}
+
+
+.app-title {
+  font-family: 'Bigelow Rules', sans-serif;
+  font-size: 7.6rem;
+  color: #0ccac4;
+
+  margin-top: 7.5rem;
+  margin-bottom: 3rem;
+}

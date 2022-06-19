@@ -1,0 +1,13 @@
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+.app {    
+    margin-top: 10rem;
+    width: 42rem;
+    box-shadow: 0 0.2rem 0.4rem rgb(0, 0, 0, 0.5);
+}

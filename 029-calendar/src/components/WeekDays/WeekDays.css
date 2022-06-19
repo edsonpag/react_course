@@ -1,0 +1,12 @@
+.weekdays {
+    display: flex;
+}
+
+.weekdays div {
+    width: calc(42rem / 7);
+    height: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

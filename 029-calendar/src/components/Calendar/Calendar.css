@@ -1,0 +1,37 @@
+.calendar-container {
+    background-color: #232327;
+    color: white;
+
+    padding-bottom: 2rem;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.days div {
+    width: calc(42rem / 7);
+    height: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.days div:hover {
+    border: 0.2rem solid white;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.prev-days,
+.next-days {
+    opacity: 0.5;
+}
+
+.today {
+    background-color: #0d7155;
+    border-radius: 20%;
+}
