@@ -1,0 +1,15 @@
+.navigation-container {
+    height: 7.8rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-inline: 2rem;
+}
+
+.navigation-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
