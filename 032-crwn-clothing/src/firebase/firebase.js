@@ -1,19 +1,28 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+import { 
+    getAuth,
+    signInWithPopup,
+    GoogleAuthProvider,
+    GithubAuthProvider,
+    signInWithRedirect
+} from "firebase/auth";
+
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDoxuiOZpu3QFk_hNMTFMYV_tUQpwYjxbg",
-  authDomain: "crown-clothing-db-81dda.firebaseapp.com",
-  projectId: "crown-clothing-db-81dda",
-  storageBucket: "crown-clothing-db-81dda.appspot.com",
-  messagingSenderId: "748145782473",
-  appId: "1:748145782473:web:ee7d46056c74880568e718"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 googleProvider.setCustomParameters({
     prompt: "select_account"
@@ -21,8 +30,13 @@ googleProvider.setCustomParameters({
 
 
 const auth = getAuth();
+
 const signInWithGooglePopup = () => {
     return signInWithPopup(auth, googleProvider);
+}
+
+const signInWithGithubRedirect = () => {
+    return signInWithRedirect(auth, githubProvider);
 }
 
 const db = getFirestore();
@@ -50,6 +64,8 @@ const createUserDocumentFromAuth = async (userAuth) => {
 }
 
 export {
+    auth,
     signInWithGooglePopup,
+    signInWithGithubRedirect,
     createUserDocumentFromAuth
 };

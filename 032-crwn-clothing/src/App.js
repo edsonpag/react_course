@@ -15,6 +15,8 @@ function Shop() {
 
 function App() {
 
+  console.log(process.env);
+
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
