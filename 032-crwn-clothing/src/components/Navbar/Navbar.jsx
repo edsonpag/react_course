@@ -21,6 +21,10 @@ function Navbar() {
                 <Link className="navigation-link" to="/contact">
                     Contact
                 </Link>
+
+                <Link className="navigation-link" to="sign-in">
+                    Sign In
+                </Link>
             </ul>
         </nav>
     );
