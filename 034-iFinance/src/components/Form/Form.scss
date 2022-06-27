@@ -1,0 +1,24 @@
+.form {
+    width: min(100rem, 80vw);
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+}
+
+
+.form div:not(.type-container) {
+    display: flex;
+    flex-direction: column;
+}
+
+.type-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
