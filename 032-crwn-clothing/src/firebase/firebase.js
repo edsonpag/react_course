@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { 
     getAuth,
     signInWithPopup,
+    createUserWithEmailAndPassword,
     GoogleAuthProvider,
     GithubAuthProvider,
     signInWithRedirect
@@ -63,9 +64,16 @@ const createUserDocumentFromAuth = async (userAuth) => {
     return userDocRef;
 }
 
+const signInWithEmailAndPassword = async (email, password) => {
+    if(!email || !password) return;
+
+    return await createUserWithEmailAndPassword(auth, email, password);
+}
+
 export {
     auth,
     signInWithGooglePopup,
     signInWithGithubRedirect,
-    createUserDocumentFromAuth
+    createUserDocumentFromAuth,
+    signInWithEmailAndPassword
 };

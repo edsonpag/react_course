@@ -1,0 +1,45 @@
+@mixin shrink() {
+    opacity: 1;
+    font-size: 1rem;
+    top: -1rem;
+    left: 0.6rem;
+
+    transition: all 300ms ease;
+}
+
+.group {
+    position: relative;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-inline: 2rem;
+}
+
+.form-data-label {
+    position: absolute;
+    opacity: 0.5;
+
+    left: 0.6rem;
+    top: 0.6rem;
+}
+
+.shrink {
+    @include shrink();
+}
+
+.form-data-input {
+    outline: none;
+    border: none;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.4);
+    
+    width: 100%;
+
+    padding-block: 0.3rem;
+    text-indent: 0.6rem;
+    font-size: 1.8rem;
+
+    &:focus ~ .form-data-label {
+        @include shrink();
+    }
+
+}

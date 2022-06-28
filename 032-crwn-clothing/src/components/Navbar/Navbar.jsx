@@ -15,15 +15,15 @@ function Navbar() {
 
             <ul className="navigation-links">
                 <Link className="navigation-link" to="/shop">
-                    Shop
+                    Loja
                 </Link>
 
                 <Link className="navigation-link" to="/contact">
-                    Contact
+                    Contato
                 </Link>
 
                 <Link className="navigation-link" to="sign-in">
-                    Sign In
+                    Entrar
                 </Link>
             </ul>
         </nav>

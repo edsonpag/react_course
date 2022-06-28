@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 
-import { getRedirectResult } from "firebase/auth";
+import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
+import { getRedirectResult } from "firebase/auth";
 import { 
     auth,
     signInWithGooglePopup,
@@ -15,7 +16,6 @@ function SignIn() {
         getRedirectResult(auth)
         .then((response) => {
             if(response) {
-                console.log(response.user);
                 createUserDocumentFromAuth(response.user);
             }
         })
@@ -33,9 +33,12 @@ function SignIn() {
     return (
 
         <div>
-            <h1>SignIn</h1>
-            <button onClick={logGoogleUser}>Sign with Google</button>
-            <button onClick={signInWithGithubRedirect}>Sign with Github</button>
+            <h2>Entrar</h2>
+            <button onClick={logGoogleUser}>Entrar com Google</button>
+            <button onClick={signInWithGithubRedirect}>Entrar com Github</button>
+
+            <h2>Entrar com um email e senha</h2>
+            <SignUpForm />
         </div>
     );
 }
