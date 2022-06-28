@@ -1,0 +1,47 @@
+@mixin hover-effect() {
+    &:hover {
+        filter: invert(100%);
+    }
+}
+
+button {
+    width: 20rem;
+    height: 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+
+    border: 0.1rem solid white;
+    background-color: black;
+
+    font-size: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.button-default {
+    @include hover-effect();
+}
+
+.inverted {
+    background-color: white;
+    border: 0.1rem solid black;
+    color: black;
+
+    @include hover-effect();
+}
+
+.github-sign-in {
+    @include hover-effect();
+}
+
+.google-sign-in {
+    background-color: blue;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import Button from "../../components/Button/Button";
 
 import { getRedirectResult } from "firebase/auth";
 import { 
@@ -9,6 +10,9 @@ import {
     signInWithGithubRedirect,
     createUserDocumentFromAuth
 } from "../../firebase/firebase";
+
+import { ReactComponent as GithubIcon } from "../../assets/GithubIcon.svg";
+import { ReactComponent as GoogleIcon } from "../../assets/GoogleIcon.svg";
 
 function SignIn() {
 
@@ -32,12 +36,22 @@ function SignIn() {
 
     return (
 
-        <div>
+        <div className="sign-in-container">
             <h2>Entrar</h2>
-            <button onClick={logGoogleUser}>Entrar com Google</button>
-            <button onClick={signInWithGithubRedirect}>Entrar com Github</button>
+            <Button
+            text="Entrar com o Google"
+            buttonType="google"
+            onClick={logGoogleUser}
+            Icon={GoogleIcon}
+            />
 
-            <h2>Entrar com um email e senha</h2>
+            <Button 
+            text="Entrar com o Github"
+            buttonType="github"
+            onClick={signInWithGithubRedirect}
+            Icon={GithubIcon}
+            />
+
             <SignUpForm />
         </div>
     );

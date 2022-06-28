@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormInput from "../FormInput/FormInput";
+import Button from "../Button/Button";
 
 import { signInWithEmailAndPassword, createUserDocumentFromAuth } from "../../firebase/firebase";
 
@@ -64,49 +65,56 @@ function SignUpForm() {
 
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
-            <FormInput 
-            label="Nome"
-            id="displayName"
-            type="text"
-            name="displayName"
-            onChange={handleChange}
-            value={formData.displayName}
-            required
-            />
+        <div className="sign-up-container">
+            <h2 className="sign-up-title">Cadastre-se</h2>
+            <form className="sign-up-form" onSubmit={handleSubmit}>
+                <FormInput 
+                label="Nome"
+                id="displayName"
+                type="text"
+                name="displayName"
+                onChange={handleChange}
+                value={formData.displayName}
+                required
+                />
 
-            <FormInput 
-            label="Email"
-            id="email"
-            name="email"
-            type="email"
-            onChange={handleChange}
-            value={formData.email}
-            required
-            />
+                <FormInput 
+                label="Email"
+                id="email"
+                name="email"
+                type="email"
+                onChange={handleChange}
+                value={formData.email}
+                required
+                />
 
-            <FormInput 
-            label="Senha"
-            id="password"
-            name="password"
-            type="password"
-            onChange={handleChange}
-            value={formData.password}
-            required
-            />
+                <FormInput 
+                label="Senha"
+                id="password"
+                name="password"
+                type="password"
+                onChange={handleChange}
+                value={formData.password}
+                required
+                />
 
-            <FormInput 
-            label="Confirme a senha"
-            id="confirmPassword"
-            name="confirmPassword"
-            type="password"
-            onChange={handleChange}
-            value={formData.confirmPassword}
-            required
-            />
+                <FormInput 
+                label="Confirme a senha"
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                onChange={handleChange}
+                value={formData.confirmPassword}
+                required
+                />
 
-            <button type="submit">Criar conta</button>
-        </form>
+                <Button 
+                text="Criar conta"
+                type="submit"
+                buttonType="default"
+                />
+            </form>
+        </div>
     );
 }
 
