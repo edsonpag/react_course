@@ -1,0 +1,11 @@
+.sign-in-container {
+    margin-top: 6rem;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15rem;
+
+    .sign-in-form {
+        justify-self: end;
+    }
+}

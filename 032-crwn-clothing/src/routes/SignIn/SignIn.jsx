@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
+import SignInForm from "../../components/SignInForm/SignInForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
-import Button from "../../components/Button/Button";
 
 import { getRedirectResult } from "firebase/auth";
 import { 
@@ -11,8 +11,7 @@ import {
     createUserDocumentFromAuth
 } from "../../firebase/firebase";
 
-import { ReactComponent as GithubIcon } from "../../assets/GithubIcon.svg";
-import { ReactComponent as GoogleIcon } from "../../assets/GoogleIcon.svg";
+import "./SignIn.scss";
 
 function SignIn() {
 
@@ -33,23 +32,12 @@ function SignIn() {
         createUserDocumentFromAuth(user);
     }
 
-
     return (
 
         <div className="sign-in-container">
-            <h2>Entrar</h2>
-            <Button
-            text="Entrar com o Google"
-            buttonType="google"
-            onClick={logGoogleUser}
-            Icon={GoogleIcon}
-            />
-
-            <Button 
-            text="Entrar com o Github"
-            buttonType="github"
-            onClick={signInWithGithubRedirect}
-            Icon={GithubIcon}
+            <SignInForm 
+            logGoogleUser={logGoogleUser} 
+            signInWithGithubRedirect={signInWithGithubRedirect}
             />
 
             <SignUpForm />
