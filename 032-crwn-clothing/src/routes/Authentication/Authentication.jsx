@@ -4,12 +4,7 @@ import SignInForm from "../../components/SignInForm/SignInForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
 import { getRedirectResult } from "firebase/auth";
-import { 
-    auth,
-    signInWithGooglePopup,
-    signInWithGithubRedirect,
-    createUserDocumentFromAuth
-} from "../../firebase/firebase";
+import { auth, createUserDocumentFromAuth } from "../../firebase/firebase";
 
 import "./Authentication.scss";
 
@@ -27,19 +22,10 @@ function Authentication() {
         });
     }, []);
 
-    const logGoogleUser = async () => {
-        const { user } = await signInWithGooglePopup();
-        createUserDocumentFromAuth(user);
-    }
-
     return (
 
         <div className="authentication-container">
-            <SignInForm 
-            logGoogleUser={logGoogleUser} 
-            signInWithGithubRedirect={signInWithGithubRedirect}
-            />
-
+            <SignInForm />
             <SignUpForm />
         </div>
     );

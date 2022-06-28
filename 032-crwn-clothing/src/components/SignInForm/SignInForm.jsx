@@ -8,7 +8,10 @@ import "./SignInForm.scss";
 import { ReactComponent as GithubIcon } from "../../assets/GithubIcon.svg";
 import { ReactComponent as GoogleIcon } from "../../assets/GoogleIcon.svg";
 
-function SignInForm({ logGoogleUser, signInWithGithubRedirect }) {
+import { signInWithGooglePopup, signInWithGithubRedirect, createUserDocumentFromAuth } 
+from "../../firebase/firebase";
+
+function SignInForm() {
 
     const [ formData, setFormData ] = useState({
         email: "",
@@ -30,6 +33,11 @@ function SignInForm({ logGoogleUser, signInWithGithubRedirect }) {
         event.preventDefault();
 
         console.log("login User With Email And Password");
+    }
+
+    const logGoogleUser = async () => {
+        const { user } = await signInWithGooglePopup();
+        createUserDocumentFromAuth(user);
     }
 
     return (
