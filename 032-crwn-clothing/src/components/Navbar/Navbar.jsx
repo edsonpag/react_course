@@ -22,7 +22,7 @@ function Navbar() {
                     Contato
                 </Link>
 
-                <Link className="navigation-link" to="sign-in">
+                <Link className="navigation-link" to="/authentication">
                     Entrar
                 </Link>
             </ul>

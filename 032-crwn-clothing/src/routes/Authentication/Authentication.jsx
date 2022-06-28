@@ -11,9 +11,9 @@ import {
     createUserDocumentFromAuth
 } from "../../firebase/firebase";
 
-import "./SignIn.scss";
+import "./Authentication.scss";
 
-function SignIn() {
+function Authentication() {
 
     useEffect(() => {
         getRedirectResult(auth)
@@ -34,7 +34,7 @@ function SignIn() {
 
     return (
 
-        <div className="sign-in-container">
+        <div className="authentication-container">
             <SignInForm 
             logGoogleUser={logGoogleUser} 
             signInWithGithubRedirect={signInWithGithubRedirect}
@@ -45,4 +45,4 @@ function SignIn() {
     );
 }
 
-export default SignIn;
+export default Authentication;
