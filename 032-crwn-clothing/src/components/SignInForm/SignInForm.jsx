@@ -8,7 +8,7 @@ import "./SignInForm.scss";
 import { ReactComponent as GithubIcon } from "../../assets/GithubIcon.svg";
 import { ReactComponent as GoogleIcon } from "../../assets/GoogleIcon.svg";
 
-import { signInWithGooglePopup, signInWithGithubRedirect, createUserDocumentFromAuth } 
+import { signInWithGooglePopup, signInWithGithubRedirect, createUserDocumentFromAuth, authWithEmailAndPassword } 
 from "../../firebase/firebase";
 
 function SignInForm() {
@@ -17,6 +17,13 @@ function SignInForm() {
         email: "",
         password: ""
     });
+
+    function resetFormData() {
+        setFormData({
+            email: "",
+            password: ""
+        });
+    }
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -29,10 +36,19 @@ function SignInForm() {
         });
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
 
-        console.log("login User With Email And Password");
+        try {
+            const response = await authWithEmailAndPassword(formData.email, formData.password);
+
+            console.log(response);
+        }
+        catch(error) {
+            console.log("error to login user with email and password ", error.message);
+        }
+
+        resetFormData();
     }
 
     const logGoogleUser = async () => {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FormInput from "../FormInput/FormInput";
 import Button from "../Button/Button";
 
-import { signInWithEmailAndPassword, createUserDocumentFromAuth } from "../../firebase/firebase";
+import { signUpWithEmailAndPassword, createUserDocumentFromAuth } from "../../firebase/firebase";
 
 import "./SignUpForm.scss";
 
@@ -36,7 +36,7 @@ function SignUpForm() {
         }
 
         try {
-            const { user } = await signInWithEmailAndPassword(formData.email, formData.password);
+            const { user } = await signUpWithEmailAndPassword(formData.email, formData.password);
             user.displayName = formData.displayName;
             await createUserDocumentFromAuth(user);
             resetFormData();
