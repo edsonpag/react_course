@@ -43,12 +43,23 @@ function SignInForm() {
             const response = await authWithEmailAndPassword(formData.email, formData.password);
 
             console.log(response);
+            resetFormData();
         }
         catch(error) {
+
+            switch(error.code) {
+                case "auth/user-not-found":
+                    alert("Email incorreto");
+                    break
+                
+                case "auth/wrong-password":
+                    alert("Senha incorreta");
+                    break
+            }
+
             console.log("error to login user with email and password ", error.message);
         }
 
-        resetFormData();
     }
 
     const logGoogleUser = async () => {
